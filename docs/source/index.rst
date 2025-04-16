@@ -44,4 +44,6 @@ Documentation
   advanced/monitor
   advanced/npu
   advanced/arguments
+  advanced/model_support
   advanced/extras
+
