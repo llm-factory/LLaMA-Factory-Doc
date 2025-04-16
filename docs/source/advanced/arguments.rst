@@ -969,3 +969,111 @@ RAY
      - Literal["SPREAD", "PACK", "STRICT_SPREAD", "STRICT_PACK"]
      - Ray 训练的资源调度策略。可选值包括 SPREAD、PACK、STRICT_SPREAD 和 STRICT_PACK。
      - PACK
+
+
+环境变量
+--------------------------------------
+
+.. list-table:: Environment Variables
+   :widths: 30 20 50
+   :header-rows: 1
+
+   * - 名称
+     - 类别
+     - 说明
+   * - ``API_HOST``
+     - API
+     - API 服务器监听的主机地址
+   * - ``API_PORT``
+     - API
+     - API 服务器监听的端口号
+   * - ``API_KEY``
+     - API
+     - 访问 API 的密码。
+   * - ``API_MODEL_NAME``
+     - API
+     - 指定 API 服务要加载和使用的模型名称
+   * - ``API_VERBOSE``
+     - API
+     - 控制 API 日志的详细程度
+   * - ``FASTAPI_ROOT_PATH``
+     - API
+     - 设置 FastAPI 应用的根路径
+   * - ``MAX_CONCURRENT``
+     - API
+     - API 的最大并发请求数。
+   * - ``DISABLE_VERSION_CHECK``
+     - General
+     - 是否禁用启动时的版本检查。
+   * - ``FORCE_CHECK_IMPORTS``
+     - General
+     - 强制检查可选的导入
+   * - ``ALLOW_EXTRA_ARGS``
+     - General
+     - 允许在命令行中传递额外参数
+   * - ``LLAMAFACTORY_VERBOSITY``
+     - General
+     - 设置 LLaMA-Factory 的日志级别("DEBUG","INFO","WARN")
+   * - ``USE_MODELSCOPE_HUB``
+     - General
+     - 优先使用 ModelScope 下载模型/数据集或使用缓存路径中的模型/数据集
+   * - ``USE_OPENMIND_HUB``
+     - General
+     - 优先使用 Openmind 下载模型/数据集或使用缓存路径中的模型/数据集
+   * - ``USE_RAY``
+     - General
+     - 是否使用 Ray 进行分布式执行或任务管理。
+   * - ``RECORD_VRAM``
+     - General
+     - 是否记录 VRAM 使用情况。
+   * - ``OPTIM_TORCH``
+     - General
+     - 是否表示启用特定的 PyTorch 优化。
+   * - ``NPU_JIT_COMPILE``
+     - General
+     - 是否为 NPU启用 JIT 编译。
+   * - ``FORCE_TORCHRUN``
+     - Torchrun
+     - 是否强制使用 ``torchrun`` 启动脚本
+   * - ``MASTER_ADDR``
+     - Torchrun
+     - Torchrun部署中主节点 (master node) 的网络地址
+   * - ``MASTER_PORT``
+     - Torchrun
+     - Torchrun部署中主节点用于通信的端口号
+   * - ``NNODES``
+     - Torchrun
+     - 参与分布式部署的总节点数量
+   * - ``NODE_RANK``
+     - Torchrun
+     - 当前节点在所有节点中的 rank，通常从 0 到 ``NNODES-1``。
+   * - ``NPROC_PER_NODE``
+     - Torchrun
+     - 每个节点上的 GPU 数
+   * - ``WANDB_DISABLED``
+     - Log
+     - 是否禁用 wandb
+   * - ``WANDB_PROJECT``
+     - Log
+     - 设置 wandb 中的项目名称。
+   * - ``WANDB_API_KEY``
+     - Log
+     - 访问 wandb 的 api key
+   * - ``GRADIO_SHARE``
+     - Web UI
+     - 是否创建一个可共享的 webui 链接
+   * - ``GRADIO_SERVER_NAME``
+     - Web UI
+     - 设置 Gradio 服务器 IP 地址（例如 ``0.0.0.0``）
+   * - ``GRADIO_SERVER_PORT``
+     - Web UI
+     - 设置 Gradio 服务器的端口
+   * - ``GRADIO_ROOT_PATH``
+     - Web UI
+     - 设置 Gradio 应用的根路径
+   * - ``GRADIO_IPV6``
+     - Web UI
+     - 启用 Gradio 服务器的 IPv6 支持
+   * - ``ENABLE_SHORT_CONSOLE``
+     - Setting
+     - 支持使用 ``lmf`` 表示 ``llamafactory-cli``
