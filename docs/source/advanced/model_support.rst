@@ -36,8 +36,7 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
 
 .. raw:: html
 
-    <pre><code class="python" style="font-family: monospace; font-size: 14px;">
-    ========== Template ==========
+    <pre><code class="python" style="font-family: monospace; font-size: 14px; background-color: #fefefe; color: #000000; padding: 5px; border-radius: 0px;">========== Template ==========
     &lt;|begin_of_text|&gt;<span style='background-color: #fff9b1;'>&lt;|header_start|&gt;user&lt;|header_end|&gt;
 
     {{content}}&lt;|eot|&gt;</span><span style='background-color: #ffff66;'>&lt;|header_start|&gt;assistant&lt;|header_end|&gt;
@@ -71,8 +70,7 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
 
 .. raw:: html
 
-    <pre><code class="language-python" style="font-family: monospace; font-size: 14px;">
-    register_template(
+    <pre><code class="python" style="font-family: monospace; font-size: 14px; background-color: #fefefe; color: #000000; padding: 5px; border-radius: 0px;">register_template(
         # 模板名称
         name="llama4", 
         # 用户消息格式，结尾附有 generation prompt 的模板
@@ -121,9 +119,9 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
             def get_mm_inputs(
                 ...
 
-``get_mm_inputs`` 的作用是将图像、视频等多模态数据转化为模型可以接收的输入，如 ``pixel_values``。为实现 ``get_mm_inputs``，首先我们需要检查 llama4 的 image_processor 是否可以与 `已有实现 <https://github.com/hiyouga/LLaMA-Factory/blob/da971c37640de20f97b4d774e77e6f8d5c00b40a/src/llamafactory/data/mm_plugin.py#L264>`_ 兼容。
-模型官方仓库中的 `image_processing_llama4_fast.py <https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama4/image_processing_llama4_fast.py#L476>`_ 
-表明 llama4 的 image_processor 返回数据包含字段 ``pixel_values`` 与 ``aspect_ratios``，这与 LLaMA-Factory 中的已有实现兼容。因此，我们只需要参照已有的 ``get_mm_inputs`` 方法实现即可。
+``get_mm_inputs`` 的作用是将图像、视频等多模态数据转化为模型可以接收的输入，如 ``pixel_values``。为实现 ``get_mm_inputs``，首先我们需要检查 llama4 的 processor 是否可以与 `已有实现 <https://github.com/hiyouga/LLaMA-Factory/blob/da971c37640de20f97b4d774e77e6f8d5c00b40a/src/llamafactory/data/mm_plugin.py#L264>`_ 兼容。
+模型官方仓库中的 `processing_llama4.py <https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama4/processing_llama4.py#L157>`_ 
+表明 llama4 的 processor 返回数据包含字段 ``pixel_values``，这与 LLaMA-Factory 中的已有实现兼容。因此，我们只需要参照已有的 ``get_mm_inputs`` 方法实现即可。
 
 .. note::
 
@@ -162,11 +160,3 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
 
 ``process_messages`` 的作用是根据输入图片/视频的大小，数量等信息在 messages 中插入相应数量的占位符，以便模型可以正确解析多模态数据。
 我们需要参考 `原仓库实现 <https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama4/processing_llama4.py#L157>`_ 以及 LLaMA-Factory 中的规范返回 ``list[dict[str, str]]`` 类型的 messages 。
-
-
-.. <span style="background-color: #fff9b1;">淡黄色高亮</span>
-.. <span style="background-color: #e6f9d9;">荧光绿高亮</span>
-.. <span style="background-color: #d6f0ff;">淡蓝色高亮</span>
-.. <span style="background-color: #ccf5f5;">薄荷青高亮</span>
-.. <span style="background-color: #ffe6f0;">淡粉色高亮</span>
-.. <span style="background-color: #f1e6ff;">淡紫色高亮</span>
