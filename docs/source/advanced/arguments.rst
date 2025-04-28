@@ -979,8 +979,8 @@ RAY
    :header-rows: 1
 
    * - 名称
-     - 类别
-     - 说明
+     - 类型
+     - 介绍
    * - ``API_HOST``
      - API
      - API 服务器监听的主机地址
@@ -1032,6 +1032,12 @@ RAY
    * - ``NPU_JIT_COMPILE``
      - General
      - 是否为 NPU启用 JIT 编译。
+   * - ``CUDA_VISIBLE_DEVICES``
+     - General
+     - GPU 选择。
+   * - ``ASCEND_RT_VISIBLE_DEVICES``
+     - General
+     - NPU 选择。 
    * - ``FORCE_TORCHRUN``
      - Torchrun
      - 是否强制使用 ``torchrun`` 启动脚本

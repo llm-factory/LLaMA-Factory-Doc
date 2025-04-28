@@ -626,7 +626,7 @@ llamafactory-cli
 
 .. code-block:: bash
 
-    bash examples/extras/fsdp qlora/train.sh
+    bash examples/extras/fsdp_qlora/train.sh
 
 
 

@@ -8,11 +8,24 @@ SFT 训练
 命令行
 -------------------------
 
-您可以使用以下命令进行微调：
+您可以使用以下命令使用 ``examples/train_lora/llama3_lora_sft.yaml`` 中的参数进行微调：
 
 .. code-block:: bash
 
     llamafactory-cli train examples/train_lora/llama3_lora_sft.yaml
+
+
+也可以通过追加参数更新 yaml 文件中的参数:
+
+.. code-block:: bash
+  
+  llamafactory-cli train examples/train_lora/llama3_lora_sft.yaml \
+      learning_rate=1e-5 \
+      logging_steps=1
+
+.. note::
+
+  LLaMA-Factory 默认使用所有可见的计算设备。根据需求可通过 ``CUDA_VISIBLE_DEVICES`` 或 ``ASCEND_RT_VISIBLE_DEVICES`` 指定计算设备。
 
 .. _sft指令:
 

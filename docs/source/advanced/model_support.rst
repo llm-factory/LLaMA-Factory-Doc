@@ -55,7 +55,7 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
 3. 系统消息： ``<|header_start|>system<|header_end|>\n\n{{content}}<|eot|>``
 4. 工具消息： ``<|header_start|>ipython<|header_end|>\n\n"{{content}}"<|eot|>``
 
-我们可以在 ``src/data/template.py`` 中使用 ``register_template`` 方法为自定义模型注册 chat_template。
+我们可以在 ``src/llamafactory/data/template.py`` 中使用 ``register_template`` 方法为自定义模型注册 chat_template。
 在实际应用中，我们往往会在用户输入的信息后添加助手回复模板的头部 ``<|header_start|>assistant<|header_end|>`` 来引导模型进行回复。
 因此我们可以看到，用户消息和工具输出的模板中都附有了助手回复的头部，而助手消息格式 ``format_assitant`` 也因此省略了助手回复的头部，
 只保留其内容部分 ``{{content}}<|eot|>``
@@ -160,3 +160,39 @@ LLaMA-Factory 允许用户添加自定义模型支持。我们将以 LLaMA-4 多
 
 ``process_messages`` 的作用是根据输入图片/视频的大小，数量等信息在 messages 中插入相应数量的占位符，以便模型可以正确解析多模态数据。
 我们需要参考 `原仓库实现 <https://github.com/huggingface/transformers/blob/main/src/transformers/models/llama4/processing_llama4.py#L157>`_ 以及 LLaMA-Factory 中的规范返回 ``list[dict[str, str]]`` 类型的 messages 。
+
+
+.. 测试 TODO
+.. ----------------------
+
+
+提供模型路径
+---------------------
+
+最后, 在 `src/llamafactory/extras/constants.py <https://github.com/hiyouga/LLaMA-Factory/blob/main/src/llamafactory/extras/constants.py>`_ 中提供模型的下载路径。
+例如：
+
+.. code-block:: python 
+
+    register_model_group(
+    models={
+        "Llama-4-Scout-17B-16E": {
+            DownloadSource.DEFAULT: "meta-llama/Llama-4-Scout-17B-16E",
+            DownloadSource.MODELSCOPE: "LLM-Research/Llama-4-Scout-17B-16E",
+        },
+        "Llama-4-Scout-17B-16E-Instruct": {
+            DownloadSource.DEFAULT: "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+            DownloadSource.MODELSCOPE: "LLM-Research/Llama-4-Scout-17B-16E-Instruct",
+        },
+        "Llama-4-Maverick-17B-128E": {
+            DownloadSource.DEFAULT: "meta-llama/Llama-4-Maverick-17B-128E",
+            DownloadSource.MODELSCOPE: "LLM-Research/Llama-4-Maverick-17B-128E",
+        },
+        "Llama-4-Maverick-17B-128E-Instruct": {
+            DownloadSource.DEFAULT: "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+            DownloadSource.MODELSCOPE: "LLM-Research/Llama-4-Maverick-17B-128E-Instruct",
+        },
+    },
+    template="llama4",
+    multimodal=True,
+    )
