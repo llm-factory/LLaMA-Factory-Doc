@@ -403,6 +403,10 @@ GaLore
      - Optional[str]
      - 用于评估的数据集名称。使用逗号分隔多个数据集。
      - None
+   * - eval_on_each_dataset
+     - Optional[bool]
+     - 是否在每个评估数据集上分开计算loss，默认concate后为整体计算。
+     - False
    * - dataset_dir
      - str
      - 存储数据集的文件夹路径。
