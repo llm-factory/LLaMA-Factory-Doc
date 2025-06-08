@@ -46,7 +46,7 @@ LLaMA-Factory 支持多种推理方式。
 
 .. code-block:: bash
 
-    llamafactory-cli webchat examples/inferece/llava1_5.yaml
+    llamafactory-cli webchat examples/inference/llava1_5.yaml
 
 ``examples/inference/llava1_5.yaml`` 的配置示例如下：
 
