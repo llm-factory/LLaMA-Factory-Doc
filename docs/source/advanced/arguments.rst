@@ -403,6 +403,10 @@ GaLore
      - Optional[str]
      - 用于评估的数据集名称。使用逗号分隔多个数据集。
      - None
+   * - eval_on_each_dataset
+     - Optional[bool]
+     - 是否在每个评估数据集上分开计算loss，默认concate后为整体计算。
+     - False
    * - dataset_dir
      - str
      - 存储数据集的文件夹路径。
@@ -411,6 +415,10 @@ GaLore
      - Optional[str]
      - 存储图像、视频或音频的文件夹路径。如果未指定，默认为 dataset_dir。
      - None
+   * - data_shared_file_system
+     - Optional[bool]
+     - 多机多卡时，不同机器存放数据集的路径是否是共享文件系统。数据集处理在该值为true时只在第一个node发生，为false时在每个node都处理一次。
+     - false
    * - cutoff_len
      - int
      - 输入的最大 token 数，超过该长度会被截断。

@@ -18,7 +18,7 @@ Full Parameter Fine-tuning
 
 .. code-block:: yaml
 
-    ### examples/train_full/llama3_full_sft_ds3..yaml
+    ### examples/train_full/llama3_full_sft_ds3.yaml
     # ...
     finetuning_type: full
     # ...
@@ -28,7 +28,7 @@ Full Parameter Fine-tuning
 .. _freeze:
 
 Freeze
---------------------------
+--------------------------    
 
 Freeze(冻结微调)指的是在训练过程中只对模型的小部分权重进行更新，这样可以降低对显存的要求。
 
