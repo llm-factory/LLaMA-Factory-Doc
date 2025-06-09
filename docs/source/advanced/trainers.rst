@@ -76,7 +76,7 @@ Supervised Fine-Tuning(监督微调)是一种在预训练模型上使用小规�
 
     ...
     stage: sft
-    fintuning_type: lora
+    finetuning_type: lora
     ...
 
 
