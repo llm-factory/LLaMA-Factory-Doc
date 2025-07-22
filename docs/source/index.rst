@@ -44,6 +44,7 @@ Documentation
   advanced/monitor
   advanced/npu
   advanced/npu_inference
+  advanced/npu_training
   advanced/arguments
   advanced/model_support
   advanced/extras
