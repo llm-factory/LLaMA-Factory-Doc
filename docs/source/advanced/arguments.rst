@@ -408,8 +408,20 @@ GaLore
      - 是否在每个评估数据集上分开计算loss，默认concate后为整体计算。
      - False
    * - dataset_dir
-     - str
-     - 存储数据集的文件夹路径。
+     - Union[str, Dict[str, Any]]
+     - 存储数据集的文件夹路径，可以是字符串或字典。  
+       
+       **类型**：`str` 或 `dict`（需符合 `dataset_info.json` 的格式）
+        - 当为字符串时，表示数据集目录的路径，例如：`./data`。 
+        - 当为字典时，将覆盖默认从本地 `dataset_info.json` 加载的行为。应具有以下结构：
+
+         .. code-block:: json
+
+            {
+              "dataset_name": {
+                "file_name": "your_file_name"
+              }
+            }
      - "data"
    * - media_dir
      - Optional[str]
