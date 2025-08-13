@@ -1,9 +1,5 @@
 
 
-#: ../../source/finetune_best_practices.rst:2
-msgid "微调最佳实践"
-msgstr "Fine-tuning Best Practices"
-
 #: ../../source/finetune_best_practices.rst:5
 msgid "3步实现 GPT-OSS 的 LoRA 微调"
 msgstr "3 Steps to LoRA Fine-tuning for GPT-OSS"

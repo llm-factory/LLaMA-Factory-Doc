@@ -1,0 +1,2 @@
+msgid "微调最佳实践"
+msgstr "Fine-tuning Best Practices"
