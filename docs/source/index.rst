@@ -33,7 +33,7 @@ Documentation
   getting_started/eval
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 3
   :caption: 高级选项
 
   advanced/acceleration
@@ -48,5 +48,5 @@ Documentation
   advanced/arguments
   advanced/model_support
   advanced/extras
-  advanced/best_practice
+  advanced/best_practice/index
 
