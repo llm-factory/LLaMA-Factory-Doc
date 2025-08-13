@@ -1,0 +1,41 @@
+
+
+#: ../../source/finetune_best_practices.rst:2
+msgid "微调最佳实践"
+msgstr "Fine-tuning Best Practices"
+
+#: ../../source/finetune_best_practices.rst:5
+msgid "3步实现 GPT-OSS 的 LoRA 微调"
+msgstr "3 Steps to LoRA Fine-tuning for GPT-OSS"
+
+#: ../../source/finetune_best_practices.rst:8
+msgid "1. 安装 LLaMA-Factory 和 transformers"
+msgstr "1. Install LLaMA-Factory and transformers"
+
+#: ../../source/finetune_best_practices.rst:15
+msgid "2. 在单张 GPU 上训练 GPT-OSS（要求显存 > 44 GB, 支持多 GPU）"
+msgstr "2. Train GPT-OSS on a single GPU (requires VRAM > 44 GB, multi-GPU supported)"
+
+#: ../../source/finetune_best_practices.rst:22
+msgid "3. 合并 LoRA 权重"
+msgstr "3. Merge LoRA Weights"
+
+#: ../../source/finetune_best_practices.rst:29
+msgid "与微调后的模型进行对话"
+msgstr "Chat with the Fine-tuned Model"
+
+#: ../../source/finetune_best_practices.rst:36
+msgid "全量微调脚本"
+msgstr "Full Fine-tuning Script"
+
+#: ../../source/finetune_best_practices.rst:85
+msgid "训练损失曲线"
+msgstr "Training Loss Curve"
+
+#: ../../source/finetune_best_practices.rst:89
+msgid "使用 Web UI 微调模型："
+msgstr "Fine-tune the Model via Web UI:"
+
+#: ../../source/finetune_best_practices.rst:93
+msgid "使用 Web UI 微调 gpt-oss"
+msgstr "Fine-tune gpt-oss via Web UI"
