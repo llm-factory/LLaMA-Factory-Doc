@@ -1,4 +1,4 @@
-NPU Inference
+NPU 推理
 =============
 
 环境安装
