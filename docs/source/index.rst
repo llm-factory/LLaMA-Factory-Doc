@@ -48,4 +48,5 @@ Documentation
   advanced/arguments
   advanced/model_support
   advanced/extras
+  advanced/best_practice
 
